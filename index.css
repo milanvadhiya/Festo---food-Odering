@@ -1,0 +1,20 @@
+@import "tailwindcss";
+
+.img-container img{
+    height: 5vw;
+    width: 5vw;
+}
+.Header{
+    display: flex;
+    align-items: center;
+    justify-content:space-between;
+}
+.nav-items .listItems{
+    /* background-color: red; */
+display: flex;
+font-size: 2vw;
+gap:10vw;
+text-decoration: none;
+    align-items: center;
+    justify-content: space-evenly;
+}
