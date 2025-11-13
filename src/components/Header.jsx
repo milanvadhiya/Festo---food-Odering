@@ -1,12 +1,14 @@
+import { LOGO_URL } from "../utils/constant";
+import { useState } from "react";
+import useOnlineStatus from "../utils/useOnlineStatus";
+
 const Header = () => {
+  const [btnName, setBtnName] = useState("login");
+  const onlineStatus = useOnlineStatus();
   return (
     <header className="w-full bg-[#0d0f14] px-8 py-4 flex items-center justify-between shadow-lg border-b border-gray-800">
       <div className="flex items-center gap-3">
-        <img
-          src="https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_800,h_800/portal/m/logo_192x192.png"
-          alt="Logo"
-          className="w-10 h-10 rounded-lg shadow-md"
-        />
+        <img src={LOGO_URL} className="w-10 h-10 rounded-lg shadow-md" />
         <h1 className="text-2xl font-semibold text-white tracking-wide">
           Festo
         </h1>
@@ -14,6 +16,24 @@ const Header = () => {
 
       <nav>
         <ul className="flex gap-10 text-gray-300 font-medium">
+          <li className="flex items-center gap-2 list-none">
+            {onlineStatus ? (
+              <span className="flex items-center gap-2 text-green-400">
+                <span className="relative flex h-3 w-3">
+                  <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
+                  <span className="relative inline-flex rounded-full h-3 w-3 bg-green-500"></span>
+                </span>
+                Online
+              </span>
+            ) : (
+              <span className="flex items-center gap-2 text-red-400">
+                <span className="relative flex h-3 w-3">
+                  <span className="relative inline-flex rounded-full h-3 w-3 bg-red-500"></span>
+                </span>
+                Offline
+              </span>
+            )}
+          </li>
           <li className="cursor-pointer hover:text-[#00eaff] transition-all duration-200">
             Home
           </li>
@@ -26,6 +46,14 @@ const Header = () => {
           <li className="cursor-pointer hover:text-[#00eaff] transition-all duration-200">
             Cart
           </li>
+          <button
+            className=" bg-black-500 text-white font-semibold rounded-md shadow hover:bg-white-600 active:scale-95 transition"
+            onClick={() => {
+              btnName === "login" ? setBtnName("logout") : setBtnName("login");
+            }}
+          >
+            {btnName}
+          </button>
         </ul>
       </nav>
     </header>
