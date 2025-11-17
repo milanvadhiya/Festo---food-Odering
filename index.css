@@ -1,20 +1,70 @@
 @import "tailwindcss";
 
-.img-container img{
-    height: 5vw;
-    width: 5vw;
+
+
+/* Full app wrapper */
+.app-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;   /* Center all children */
+  background-color: #f7f7f7;
+  min-height: 100vh;
 }
-.Header{
-    display: flex;
-    align-items: center;
-    justify-content:space-between;
+
+/* Central content area */
+.content-container {
+  width: 100%;
+  max-width: 1200px;    /* Like Swiggy */
+  margin-top: 20px;
+  padding: 0 20px;      /* Padding for sides */
 }
-.nav-items .listItems{
-    /* background-color: red; */
-display: flex;
-font-size: 2vw;
-gap:10vw;
-text-decoration: none;
-    align-items: center;
-    justify-content: space-evenly;
+
+
+
+@keyframes swiggyNext {
+  0% {
+    transform: translateX(50px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes swiggyPrev {
+  0% {
+    transform: translateX(-50px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+.animate-swiggyNext {
+  animation: swiggyNext 0.3s ease-out;
+}
+
+.animate-swiggyPrev {
+  animation: swiggyPrev 0.3s ease-out;
+}
+.app-container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  align-items: stretch; /* important */
+  background-color: #f7f7f7;
+}
+
+.content-container {
+  width: 100%;
+  max-width: 1250px; /* like Swiggy */
+  margin: 0 auto;     /* horizontally center */
+  padding: 0 20px;
+}
+
+body, html {
+  height: 100%; /* Ensure full height for locomotive */
 }

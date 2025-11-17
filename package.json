@@ -2,6 +2,7 @@
   "name": "food-odering",
   "version": "1.0.0",
   "description": "",
+ 
   "scripts": {
     "dev": "parcel index.html",
     "build": "parcel build index.html"
@@ -11,8 +12,15 @@
   "license": "ISC",
   "dependencies": {
     "@tailwindcss/postcss": "^4.1.17",
+    "locomotive-scroll": "^4.1.4",
+    "lucide-react": "^0.553.0",
+    "nodemon": "^3.1.11",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
+    "react-icons": "^5.5.0",
+    "react-router": "6.14",
+    "react-router-dom": "6.14",
+    "tailwind-scrollbar-hide": "^4.0.0",
     "tailwindcss": "^4.1.17"
   },
   "devDependencies": {
